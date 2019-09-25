@@ -19,7 +19,7 @@ namespace HW4_Task2
         {
             Random numbers = new Random();
 
-            int[] array = new int[20];
+            int[] array = new int[5];
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -40,11 +40,9 @@ namespace HW4_Task2
         {
             int[] sortArray = Create();
 
-            int count = 0;
-
-            while (count < sortArray.Length)
+            for (int j = sortArray.Length - 1; j > 0; j--)
             {
-                for (int i = 0; i < sortArray.Length - 1; i++)
+                for (int i = 0; i < j; i++)
                 {
                     if (sortArray[i] > sortArray[i + 1])
                     {
@@ -53,10 +51,8 @@ namespace HW4_Task2
                         sortArray[i] = sortArray[i] - sortArray[i + 1];
                     }
                 }
-
-                count++;
-            }
-
+            }           
+            
             foreach (var item in sortArray)
             {
                 Console.Write($"{item} ");
